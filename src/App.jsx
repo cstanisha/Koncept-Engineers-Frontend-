@@ -4,7 +4,7 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import AboutUs from "./Pages/Aboutus";
 import Services from "./Pages/Services";
-import ContactUs from "./Pages/ContactUs";
+import ContactUs from "./Pages/Contactus";
 import Solutions from "./Pages/Solutions";
 import AwardsAndAccolades from "./Pages/AwardsAndAccolades";
 

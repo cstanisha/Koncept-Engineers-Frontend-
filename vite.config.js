@@ -4,9 +4,4 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  esbuild: {
-    loader: 'jsx',             
-    include: /\.js$/,           
-    exclude: [],                
-  },
 });
