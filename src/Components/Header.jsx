@@ -205,6 +205,18 @@ const Header = () => {
           >
             Services
           </NavLink>
+
+          <NavLink
+            to="/mediacoverage"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#27c2a4]"
+                : "text-white hover:text-[#27c2a4] transition-all"
+            }
+          >
+            Media Coverage
+          </NavLink>
+
           <NavLink
             to="/awardsandaccolades"
             className={({ isActive }) =>
@@ -213,101 +225,101 @@ const Header = () => {
                 : "text-white hover:text-[#27c2a4] transition-all"
             }
           >
-            Awards & Accolades
+            Awards
+          </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#27c2a4]"
+              : "text-white hover:text-[#27c2a4] transition-all"
+          }
+        >
+          Contact Us
+        </NavLink>
+      </nav>
+
+      {/* Mobile Hamburger */}
+      <div className="md:hidden">
+        <button onClick={toggleMenu} className="text-2xl">
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-40 bg-[#0c192e] bg-opacity-95 backdrop-blur-md flex flex-col items-center justify-center gap-8 text-xl">
+          <button
+            onClick={toggleMenu}
+            className="absolute top-4 right-4 text-3xl"
+          >
+            <FaTimes />
+          </button>
+          <NavLink
+            to="/"
+            onClick={toggleMenu}
+            className="hover:text-[#27c2a4] text-white text-2xl"
+          >
+            Home
           </NavLink>
           <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive
-                ? "text-[#27c2a4]"
-                : "text-white hover:text-[#27c2a4] transition-all"
-            }
+            to="/aboutus"
+            onClick={toggleMenu}
+            className="hover:text-[#27c2a4] text-white text-2xl"
           >
-            Contact Us
+            About Us
           </NavLink>
-        </nav>
 
-        {/* Mobile Hamburger */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-2xl">
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {menuOpen && (
-          <div className="fixed inset-0 z-40 bg-[#0c192e] bg-opacity-95 backdrop-blur-md flex flex-col items-center justify-center gap-8 text-xl">
+          {/* Mobile Dropdown for Solutions */}
+          <div>
             <button
-              onClick={toggleMenu}
-              className="absolute top-4 right-4 text-3xl"
+              onClick={toggleSolutions}
+              className="text-white text-2xl flex items-center gap-2"
             >
-              <FaTimes />
+              Solutions <FaChevronDown className="text-sm" />
             </button>
-            <NavLink
-              to="/"
-              onClick={toggleMenu}
-              className="hover:text-[#27c2a4] text-white text-2xl"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/aboutus"
-              onClick={toggleMenu}
-              className="hover:text-[#27c2a4] text-white text-2xl"
-            >
-              About Us
-            </NavLink>
-
-            {/* Mobile Dropdown for Solutions */}
-            <div>
-              <button
-                onClick={toggleSolutions}
-                className="text-white text-2xl flex items-center gap-2"
-              >
-                Solutions <FaChevronDown className="text-sm" />
-              </button>
-              {solutionsOpen && (
-                <div className="flex flex-col gap-3 mt-4">
-                  {solutionsList.map((solution) => (
-                    <div key={solution.title}>
-                      <div
-                        onClick={() => toggleSolution(solution.title)}
-                        className="text-white hover:text-[#27c2a4] text-xl flex justify-between items-center cursor-pointer"
-                      >
-                        {solution.title}
-                        {solution.subItems && (
-                          <FaChevronDown className="text-sm" />
-                        )}
-                      </div>
-
-                      {/* Submenu for mobile */}
-                      {activeSolution === solution.title &&
-                        solution.subItems && (
-                          <div className="flex flex-col gap-3 pl-4 mt-2">
-                            {solution.subItems.map((subItem) => (
-                              <Link
-                                key={subItem}
-                                to={`/solutions/${subItem
-                                  .toLowerCase()
-                                  .replace(/ & /g, "-")
-                                  .replace(/\s+/g, "-")}`}
-                                onClick={toggleMenu}
-                                className="text-white hover:text-[#27c2a4] text-lg"
-                              >
-                                {subItem}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
+            {solutionsOpen && (
+              <div className="flex flex-col gap-3 mt-4">
+                {solutionsList.map((solution) => (
+                  <div key={solution.title}>
+                    <div
+                      onClick={() => toggleSolution(solution.title)}
+                      className="text-white hover:text-[#27c2a4] text-xl flex justify-between items-center cursor-pointer"
+                    >
+                      {solution.title}
+                      {solution.subItems && (
+                        <FaChevronDown className="text-sm" />
+                      )}
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
+
+                    {/* Submenu for mobile */}
+                    {activeSolution === solution.title &&
+                      solution.subItems && (
+                        <div className="flex flex-col gap-3 pl-4 mt-2">
+                          {solution.subItems.map((subItem) => (
+                            <Link
+                              key={subItem}
+                              to={`/solutions/${subItem
+                                .toLowerCase()
+                                .replace(/ & /g, "-")
+                                .replace(/\s+/g, "-")}`}
+                              onClick={toggleMenu}
+                              className="text-white hover:text-[#27c2a4] text-lg"
+                            >
+                              {subItem}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-        )}
-      </div>
-    </header>
+        </div>
+      )}
+    </div>
+    </header >
   );
 };
 
