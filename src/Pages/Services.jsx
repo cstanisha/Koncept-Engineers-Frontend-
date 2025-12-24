@@ -47,8 +47,8 @@ const services = [
     ]
   },
   {
-    id: "remote-monitoring",
-    title: "Remote Monitoring",
+    id: "Cloud-Services",
+    title: "Cloud Services",
     image: remote,
     paragraphs: [
       "Remote servicing in building automation represents a significant advancement in facility management.",
@@ -70,24 +70,24 @@ const Services = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Always reset scroll position when Services page loads
+    window.scrollTo({ top: 0, behavior: "auto" });
+
+    // If hash exists, scroll to that section smoothly
     if (location.hash) {
       const id = location.hash.replace("#", "");
+
       setTimeout(() => {
-        // First instantly scroll to top (no smooth effect)
-        window.scrollTo({ top: 0, behavior: "auto" });
-        
-        // Then trigger smooth scrolling from top
-        setTimeout(() => {
-          scroller.scrollTo(id, {
-            duration: 1000,
-            delay: 0,
-            smooth: "easeInOutQuart",
-            offset: -80,
-          });
-        }, 100);
-      }, 100);
+        scroller.scrollTo(id, {
+          duration: 1000,
+          delay: 0,
+          smooth: "easeInOutQuart",
+          offset: -80,
+        });
+      }, 200);
     }
-  }, [location]);
+  }, [location.pathname, location.hash]);
+
 
   return (
     <>
@@ -117,9 +117,8 @@ const Services = () => {
             </div>
 
             <div
-              className={`flex flex-col md:flex-row items-center justify-center gap-14 ${
-                index % 2 !== 0 ? "md:flex-row-reverse" : ""
-              }`}
+              className={`flex flex-col md:flex-row items-center justify-center gap-14 ${index % 2 !== 0 ? "md:flex-row-reverse" : ""
+                }`}
             >
               <div className="w-full md:w-[45%] md:h-[420px]">
                 <img
@@ -141,12 +140,12 @@ const Services = () => {
                     {para}
                   </motion.p>
                 ))}
-              <Link 
-                to="/contact#contact-form" 
-                className="bg-teal-400 hover:bg-teal-500 text-white px-6 py-3 rounded-full shadow-md transition-all font-semibold"
-              >
-                 Contact Us
-               </Link>
+                <Link
+                  to="/contact#contact-form"
+                  className="bg-teal-400 hover:bg-teal-500 text-white px-6 py-3 rounded-full shadow-md transition-all font-semibold"
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
           </section>
