@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Cpu, Wifi, BarChart2, Wrench, Monitor, Camera } from "lucide-react";
+import { Cpu, Wifi, BarChart2, Wrench, Monitor, Camera, Brain, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import bim from "../assets/bim.jpg";
 import iot from "../assets/IOT.jpg";
@@ -40,9 +40,9 @@ const services = [
     image: predictive,
   },
   {
-    id: "remote-monitoring",
+    id: "Cloud-Services",
     icon: <Monitor size={60} />,
-    title: "Remote Monitoring",
+    title: "Cloud Services",
     desc: "Remote servicing in building automation represents a significant advancement in facility management.",
     image: remote,
   },
@@ -53,6 +53,31 @@ const services = [
     desc: "Video analytics significantly enhances security and fire alarm systems by adding intelligence to visual data.",
     image: videoanalytics,
   },
+
+  {
+    id: "AI-ML-integration",
+    icon: <Brain size={60} />,
+    title: "AI/ML Integration",
+    desc: "AI and machine learning enable predictive insights, automation, and intelligent decision-making across smart systems.",
+    image: videoanalytics,
+  },
+
+  {
+    id: "embedded-solutions",
+    icon: <Cpu size={60} />,
+    title: "Embedded Solutions",
+    desc: "Robust embedded systems designed for real-time processing, control, and seamless integration with smart infrastructure.",
+    image: videoanalytics,
+  },
+
+  {
+    id: "vr-ar-technologies",
+    icon: <Glasses size={60} />,
+    title: "VR/AR Technologies",
+    desc: "Immersive VR and AR solutions for visualization, simulation, training, and enhanced digital experiences.",
+    image: videoanalytics,
+  },
+
 ];
 
 const ServiceCard = ({ service }) => {
@@ -80,7 +105,7 @@ const ServiceCard = ({ service }) => {
         <h4 className="text-teal-400 font-semibold mb-2">{service.title}</h4>
         <p className="text-gray-300 mb-6">{service.desc}</p>
         <Link to={`/services#${service.id}`}>
-          <button  className="bg-[#009FB2] hover:bg-[#0083A0] text-white px-6 py-3 rounded-full shadow-md transition-all">
+          <button className="bg-[#009FB2] hover:bg-[#0083A0] text-white px-6 py-3 rounded-full shadow-md transition-all">
             Learn More
           </button>
         </Link>
