@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Cpu, Wifi, BarChart2, Wrench, Monitor, Camera, Brain, Glasses } from "lucide-react";
+import { Cpu, Wifi, BarChart2, Wrench, Monitor, Camera, Brain, FocusIcon ,BuildingIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import bim from "../assets/bim.jpg";
 import iot from "../assets/IOT.jpg";
@@ -8,12 +8,15 @@ import dataanalytics from "../assets/Dataanalytics.jpg";
 import predictive from "../assets/predictive.jpg";
 import remote from "../assets/remote.jpg";
 import videoanalytics from "../assets/Videoanalytics.jpg";
+import aimlintegration from "../assets/aimlintegration.jpg";
+import vrartechnologies from "../assets/vrartechnologies.jpg";
+import embeddedsolutions from "../assets/embeddedsolutions.jpg";
 
 
 const services = [
   {
     id: "bim",
-    icon: <Cpu size={60} />,
+    icon: <BuildingIcon size={60} />,
     title: "BIM Integration",
     desc: "Incorporating BIM and smart building automation into facility management activities enhances efficiency, sustainability, and occupant comfort while reducing operational costs.",
     image: bim,
@@ -49,7 +52,7 @@ const services = [
   {
     id: "video-analytics",
     icon: <Camera size={60} />,
-    title: "Video Analysis",
+    title: "Video Analytics",
     desc: "Video analytics significantly enhances security and fire alarm systems by adding intelligence to visual data.",
     image: videoanalytics,
   },
@@ -59,7 +62,7 @@ const services = [
     icon: <Brain size={60} />,
     title: "AI/ML Integration",
     desc: "AI and machine learning enable predictive insights, automation, and intelligent decision-making across smart systems.",
-    image: videoanalytics,
+    image: aimlintegration,
   },
 
   {
@@ -67,15 +70,15 @@ const services = [
     icon: <Cpu size={60} />,
     title: "Embedded Solutions",
     desc: "Robust embedded systems designed for real-time processing, control, and seamless integration with smart infrastructure.",
-    image: videoanalytics,
+    image: embeddedsolutions,
   },
 
   {
     id: "vr-ar-technologies",
-    icon: <Glasses size={60} />,
+    icon: <FocusIcon size={60} />,
     title: "VR/AR Technologies",
     desc: "Immersive VR and AR solutions for visualization, simulation, training, and enhanced digital experiences.",
-    image: videoanalytics,
+    image: vrartechnologies,
   },
 
 ];

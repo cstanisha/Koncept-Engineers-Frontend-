@@ -69,10 +69,10 @@ const ContactUs = () => {
         {/* Address Section */}
         <div className="bg-gray-900 bg-opacity-70 p-8 rounded-lg shadow-lg w-full max-w-lg text-white">
           <h2 className="text-2xl font-bold mb-4">Visit Us</h2>
-          <p><strong>Office:</strong> 114 1st Floor Vardhman Star Mall, Sector 19, Faridabad</p>
-          <p><strong> Unit Address 1:</strong> Plot No 228, Sector 68, IMT Faridabad, Haryana-121004</p>
+          <p><strong>Office:</strong> 228, Sector 68, IMT Faridabad, Haryana-121004</p>
+          <p><strong> Unit Address 1:</strong> 114 1st Floor Vardhman Star Mall, Sector 19, Faridabad</p>
           <p><strong> Unit Address 2:</strong> Plot No 478, Sector 68, IMT Faridabad, Haryana-121004</p>
-          
+         
           {/* Google Map Embed */}
           <div className="mt-4">
             <iframe
@@ -86,7 +86,7 @@ const ContactUs = () => {
 
           {/* Locate Button */}
           <button className="bg-teal-500 text-white py-2 px-4 rounded mt-4 hover:bg-teal-700 w-full">
-            <a href="https://maps.app.goo.gl/WG237EkDvKGkEg6C9" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+            <a href="https://maps.app.goo.gl/9MBWT2XAbzz1Vutw8" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
               Locate on Google Maps
             </a>
           </button>

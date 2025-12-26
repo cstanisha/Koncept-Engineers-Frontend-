@@ -12,8 +12,7 @@ const AboutUsHero = () => {
         className="relative h-[600px] bg-center bg-no-repeat bg-cover brightness-75 overflow-hidden"
         style={{ backgroundImage: `url(${aboutus})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/10 opacity-90 backdrop-blur-sm z-10"></div>
-
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/10 z-10"></div>
         <motion.div
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

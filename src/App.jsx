@@ -7,18 +7,20 @@ import Services from "./Pages/Services";
 import ContactUs from "./Pages/Contactus";
 import Solutions from "./Pages/Solutions";
 import AwardsAndAccolades from "./Pages/AwardsAndAccolades";
-import Mediacoverage from "./Pages/Mediacoverage";
+import Media from "./Pages/Media";
+import ScrollToTop from "./Components/Scrolltop"; 
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/solutions" element={<Solutions />} />
-        <Route path="/mediacoverage" element={<Mediacoverage />} />
+        <Route path="/mediacoverage" element={<Media />} />
         <Route path="/awardsandaccolades" element={<AwardsAndAccolades />} />
         <Route path="/contact" element={<ContactUs />} />
       </Routes>

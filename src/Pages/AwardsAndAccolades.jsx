@@ -1,23 +1,20 @@
-import React from "react";
-import Marquee from "react-fast-marquee";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
-// Dynamically import images (Vite-compatible)
-const accoladeImages = Object.values(
-  import.meta.glob("../assets/accolades/*.png", { eager: true })
-);
-const awardImages = Object.values(
-  import.meta.glob("../assets/awards/*.png", { eager: true })
-);
+import AwardsAccoladesSection from "../Components/AwardsAndAccoladesSection";
 
 const AwardsAndAccolades = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
+
   return (
     <>
-      {/* Hero Section */}
-      <div className="relative h-[500px] flex flex-col justify-center px-4 md:px-20 text-white bg-[#0a1128]">
+      {/* ================= HERO ================= */}
+      <section className="relative h-[500px] flex flex-col justify-center px-6 md:px-20 text-white bg-[#0a1128]">
         <h1 className="text-6xl font-extrabold mb-6 tracking-wide text-center">
           Awards & Accolades
         </h1>
+
         <div className="text-center">
           <Link to="/" className="text-teal-400 hover:underline text-lg">
             Home
@@ -27,59 +24,27 @@ const AwardsAndAccolades = () => {
             Awards & Accolades
           </span>
         </div>
-      </div>
+      </section>
 
-      {/* Awards and Accolades Marquee Section */}
-      <section className="bg-[#0a1128] py-20 space-y-16">1
-        <h2 className="text-white text-3xl font-bold text-center mb-8">
-          Recognitions
-        </h2>
-
-        {/* 🥇 Awards Section */}
-        <div id="awards">
-          <h3 className="text-white text-2xl text-center mb-6">Our Awards</h3>
-          <Marquee
-            pauseOnHover
-            speed={100}
-            gradient={false}
-            direction="right"
-            className="flex items-center gap-10"
-          >
-            {awardImages.map((img, index) => (
-              <img
-                key={index}
-                src={img.default}
-                alt={`Award ${index + 1}`}
-                className="h-[300px] mx-6 object-contain"
-              />
-            ))}
-          </Marquee>
+      {/* ================= CONTENT ================= */}
+      <section className="py-24 bg-gradient-to-r from-[#13263e] via-[#101f2e] to-[#13263e]">
+        <div className="max-w-7xl mx-auto px-6 md:px-16">
+          <div className="text-center mb-14">
+            <p className="text-teal-400 uppercase font-semibold tracking-wider text-sm">
+              Our Achievements
+            </p>
+          </div>
         </div>
 
-        {/* 🏆 Accolades Section */}
-        <div id="accolades">
-          <h3 className="text-white text-2xl text-center mb-6">Our Accolades</h3>
-          <Marquee
-            pauseOnHover
-            speed={100}
-            gradient={false}
-            className="flex items-center gap-10"
-          >
-            {accoladeImages.map((img, index) => (
-              <img
-                key={index}
-                src={img.default}
-                alt={`Accolade ${index + 1}`}
-                className="h-[350px] mx-6 object-contain"
-              />
-            ))}
-          </Marquee>
-        </div>
+        {/* Actual marquee content */}
+        <AwardsAccoladesSection />
       </section>
     </>
   );
 };
 
 export default AwardsAndAccolades;
+
+
 
 

@@ -16,11 +16,11 @@ const Footer = () => {
     },
     {
       line: "Koncept Engineers Factory, Plot No: 478, Sector 68, IMT Faridabad, Haryana-121004",
-      mapLink: "https://maps.app.goo.gl/jRbYP1hBPG96k84b6",
+      mapLink: "https://maps.app.goo.gl/9MBWT2XAbzz1Vutw8",
     },
     {
       line: "Koncept Engineers Factory, Plot No: 228, Sector 68, IMT Faridabad, Haryana-121004",
-      mapLink: "https://maps.app.goo.gl/YOUR_CORRECTED_MAP_LINK",
+      mapLink: "https://maps.app.goo.gl/jRbYP1hBPG96k84b6",
     },
   ];
 

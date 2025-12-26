@@ -8,6 +8,9 @@ import Dataanalytics from "../assets/Dataanalytics.jpg";
 import predictive from "../assets/predictive.jpg";
 import remote from "../assets/remote.jpg";
 import Videoanalytics from "../assets/Videoanalytics.jpg";
+import aimlintegration from "../assets/aimlintegration.jpg";
+import vrartechnologies from "../assets/vrartechnologies.jpg";
+import embeddedsolutions from "../assets/embeddedsolutions.jpg";
 
 const services = [
   {
@@ -63,8 +66,36 @@ const services = [
       "Video analytics significantly enhances security and fire alarm systems by adding intelligence to visual data.",
       "It enables quicker response times, reduces false alarms, and improves overall safety and security in diverse settings, making it an invaluable tool in safeguarding people and assets."
     ]
+  },
+  {
+    id: "AI-ML-integration",
+    title: "AI-ML Integration",
+    image: aimlintegration,
+    paragraphs: [
+      "AI and Machine Learning enable predictive insights, automation, and intelligent decision-making across smart systems.",
+      "These technologies help optimize operations, improve efficiency, and unlock new levels of intelligence in digital infrastructure."
+    ]
+  },
+  {
+    id: "embedded-solutions",
+    title: "Embedded Solutions",
+    image: embeddedsolutions,
+    paragraphs: [
+      "Our embedded solutions are designed for real-time processing, control, and seamless integration with smart infrastructure.",
+      "They ensure high reliability, performance, and scalability across industrial and commercial environments."
+    ]
+  },
+  {
+    id: "vr-ar-technologies",
+    title: "VR-AR Technologies",
+    image: vrartechnologies,
+    paragraphs: [
+      "VR and AR technologies deliver immersive visualization, simulation, and training experiences.",
+      "They enhance planning, design validation, and user engagement across digital and physical environments."
+    ]
   }
 ];
+
 
 const Services = () => {
   const location = useLocation();

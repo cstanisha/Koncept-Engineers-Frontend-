@@ -43,44 +43,48 @@ const Solutions = () => {
         </div>
       </div>
 
-      
-       {/* Cards Grid */}  
-       <div className="bg-[#0e1b2a] px-6 sm:px-20 py-20">
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-14">
-    {solutions.map((item, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: -80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{
-          type: "tween",
-          ease: [0.22, 1, 0.36, 1], 
-          duration: 0.5,
-          delay: index * 0.1,
-        }}
-        className="bg-[#13263b] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300"
-      >
-        <img
-          src={item.imageSrc}
-          alt={item.title}
-          className="w-full h-80 object-cover"
-        />
-        <div className="p-7">
-          <h3 className="text-cyan-400 text-lg font-semibold mb-4">
-            {item.title}
-          </h3>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-cyan-500 text-white text-base rounded-md hover:bg-cyan-600 transition-colors duration-300"
-          >
-            Contact Us <FaPaperPlane className="text-sm" />
-          </Link>
+
+      {/* Cards Grid */}
+      <div className="bg-[#0e1b2a] px-6 sm:px-20 py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-14">
+          {solutions.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: -60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{
+                type: "spring",
+                stiffness: 80,   // controls speed (lower = smoother)
+                damping: 18,     // controls bounce (higher = less bounce)
+                mass: 0.6,       // gives weight (important)
+                delay: index * 0.08,
+              }}
+              className="bg-[#13263b] rounded-2xl overflow-hidden shadow-2xl
+             transition-shadow duration-300"
+            >
+
+
+              <img
+                src={item.imageSrc}
+                alt={item.title}
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-7">
+                <h3 className="text-cyan-400 text-lg font-semibold mb-4">
+                  {item.title}
+                </h3>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-cyan-500 text-white text-base rounded-md hover:bg-cyan-600 transition-colors duration-300"
+                >
+                  Contact Us <FaPaperPlane className="text-sm" />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </motion.div>
-    ))}
-  </div>
-</div>
+      </div>
     </>
   );
 };
