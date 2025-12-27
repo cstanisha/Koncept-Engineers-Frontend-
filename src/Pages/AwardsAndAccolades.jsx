@@ -10,7 +10,7 @@ const AwardsAndAccolades = () => {
   return (
     <>
       {/* ================= HERO ================= */}
-      <section className="relative h-[500px] flex flex-col justify-center px-6 md:px-20 text-white bg-[#0a1128]">
+      <section className="relative h-[400px] flex flex-col justify-center px-6 md:px-20 text-white bg-[#0a1128]">
         <h1 className="text-6xl font-extrabold mb-6 tracking-wide text-center">
           Awards & Accolades
         </h1>

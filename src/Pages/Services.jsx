@@ -54,9 +54,9 @@ const services = [
     title: "Cloud Services",
     image: remote,
     paragraphs: [
-      "Remote servicing in building automation represents a significant advancement in facility management.",
-      "It enhances efficiency, reduces costs, improves building performance, and contributes to sustainability efforts while ensuring that building systems run smoothly with minimal disruptions."
-    ]
+        "Cloud services enable secure ingestion, storage, and processing of real-time data from building systems using protocols such as MQTT, BACnet/IP, Modbus, and REST APIs.",
+    "By centralizing operational data on the cloud, facility managers gain real-time visibility, remote monitoring, analytics, alerts, and predictive insights across multiple sites from a single platform."
+  ]
   },
   {
     id: "video-analytics",
@@ -122,7 +122,7 @@ const Services = () => {
 
   return (
     <>
-      <div className="relative h-[500px] flex flex-col justify-center px-4 md:px-20 text-white bg-[#0a1128]">
+      <div className="relative h-[400px] flex flex-col justify-center px-4 md:px-20 text-white bg-[#0a1128]">
         <h1 className="text-6xl font-extrabold mb-6 text-center">Services</h1>
         <div className="text-center">
           <Link to="/" className="text-teal-400 hover:underline text-lg">
