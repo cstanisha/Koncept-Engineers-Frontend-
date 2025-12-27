@@ -230,55 +230,60 @@ const Home = () => {
       </section>
 
       {/* ================= CLIENTELE ================= */}
-      <section className="bg-[#f3e2c2] py-16 overflow-hidden">
+      <section className="relative bg-[#f3e2c2] py-24 overflow-x-hidden">
         <Container>
-          <h2 className="text-4xl font-bold text-center text-black mb-12">
+          <h2 className="text-4xl font-bold text-center text-black mb-16">
             Clientele
           </h2>
         </Container>
 
         {/* Row 1 */}
-        <div className="overflow-hidden">
-          <Marquee pauseOnHover speed={55} gradient={false}>
+        <div className="relative w-full overflow-x-hidden">
+          <Marquee speed={130} gradient={false} pauseOnHover autoFill>
             {firstRow.map((img, index) => (
               <div
                 key={index}
                 className="mx-10 flex items-center justify-center
-                     w-[200px] h-[110px]"
+                     w-[200px] h-[120px]"
               >
                 <img
                   src={img.default}
                   alt={`Client ${index + 1}`}
-                  className="max-w-[230px] max-h-[100px] object-contain"
-                  loading="lazy"
+                  className="max-w-[250px] max-h-[110px] object-contain"
                 />
               </div>
             ))}
           </Marquee>
         </div>
 
-        <div className="h-10" />
+        <div className="h-12" />
 
         {/* Row 2 */}
-        <div className="overflow-hidden">
-          <Marquee pauseOnHover speed={50} gradient={false} direction="right">
+        <div className="relative w-full overflow-x-hidden">
+          <Marquee
+            speed={120}
+            gradient={false}
+            pauseOnHover
+            direction="right"
+            autoFill
+          >
             {secondRow.map((img, index) => (
               <div
                 key={index}
                 className="mx-10 flex items-center justify-center
-                     w-[200px] h-[110px]"
+                     w-[200px] h-[120px]"
               >
                 <img
                   src={img.default}
                   alt={`Client ${half + index + 1}`}
-                  className="max-w-[160px] max-h-[80px] object-contain"
-                  loading="lazy"
+                  className="max-w-[200px] max-h-[110px] object-contain"
                 />
               </div>
             ))}
           </Marquee>
         </div>
       </section>
+
 
 
       {/* ================= AWARDS & ACCOLADES ================= */}
